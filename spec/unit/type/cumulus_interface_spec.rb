@@ -12,6 +12,8 @@ describe cl_iface do
       :speed,
       :autoneg,
       :mtu,
+      :vrf,
+      :vrf_table,
       :virtual_ip,
       :virtual_mac,
       :vids,

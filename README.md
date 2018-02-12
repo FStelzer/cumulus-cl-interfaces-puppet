@@ -156,6 +156,8 @@ cumulus_bridge { 'bridge':
 * `speed` - The interface link speed.
 * `autoneg` - Link Auto-Negotiation (on/off)
 * `mtu` - The interface Maximum Transmission Unit (MTU).
+* `vrf` - VRF the interface should be attached to.
+* `vrf_table` - Table number for a VRF interface (or auto).
 * `virtual_ip` - VRR virtual IP address.
 * `virtual_mac` - VRR virtual MAC address.
 * `vids` - Array of VLANs to be configured for a VLAN-aware trunk interface.
@@ -191,6 +193,7 @@ The following CLAG-related attributes are also available. If CLAG is enabled, yo
 * ``alias_name`` - Interface alias.
 * ``addr_method`` - Address assignment method. May be `dhcp` or empty. Default is empty (no address method is set).
 * ``mtu`` - The interface Maximum Transmission Unit (MTU).
+* ``vrf`` - VRF the interface should be attached to.
 * ``virtual_ip`` - VRR virtual IP address.
 * ``virtual_mac`` - VRR virtual MAC address.
 * ``vids`` - Array of VLANs to be configured for a VLAN-aware trunk interface.
@@ -217,6 +220,7 @@ The following CLAG-related attributes are also available. If CLAG is enabled, yo
 * `alias_name` - Interface alias.
 * `addr_method` - Address assignment method. May be `dhcp` or empty. Default is empty (no address method is set).
 * `mtu` - The interface Maximum Transmission Unit (MTU).
+* `vrf` - VRF the interface should be attached to.
 * `stp` - Enable spanning tree. Default is true.
 * `mstpctl_treeprio` - Bridge tree root priority. Must be a multiple of 4096.
 * `vlan_aware` - Use the VLAN-aware bridge driver. Default is false.
