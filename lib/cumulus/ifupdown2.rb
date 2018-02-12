@@ -126,7 +126,7 @@ class Ifupdown2Config
   def update_autoneg
     return if @resource[:autoneg].nil?
     Puppet.debug "configuring auto negotiation #{@resource[:name]}"
-    @confighash['config']['link-autoneg'] = @resource[:autoneg]
+    @confighash['config']['link-autoneg'] = @resource[:autoneg].to_s
   end
 
   # updates vrr config in config hash
