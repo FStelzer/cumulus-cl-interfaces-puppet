@@ -99,6 +99,18 @@ Puppet::Type.newtype(:cumulus_bridge) do
     end
   end
 
+  newparam(:mcquerier) do
+    desc 'Enable multicast querier'
+    newvalues(0, 1)
+    munge do |value|
+      @resource.munge_integer(value)
+    end
+  end
+
+  newparam(:igmp_querier_src) do
+    desc 'igmp querier src ip'
+  end
+
   newparam(:location) do
     desc 'location of interface files'
     defaultto '/etc/network/interfaces.d'

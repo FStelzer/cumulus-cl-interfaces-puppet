@@ -84,6 +84,14 @@ Puppet::Type.newtype(:cumulus_bond) do
     end
   end
 
+  newparam(:portmcrouter) do
+    desc 'set port multicast router'
+    newvalues(0, 1)
+    munge do |value|
+      @resource.munge_integer(value)
+    end
+  end
+
   newparam(:location) do
     desc 'location of interface files'
     defaultto '/etc/network/interfaces.d'
