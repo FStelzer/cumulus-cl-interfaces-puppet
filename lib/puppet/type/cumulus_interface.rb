@@ -139,6 +139,26 @@ Puppet::Type.newtype(:cumulus_interface) do
     desc 'configures port adminedge.'
   end
 
+  newparam(:mcquerier) do
+    desc 'Enable multicast querier'
+    newvalues(0, 1)
+    munge do |value|
+      @resource.munge_integer(value)
+    end
+  end
+
+  newparam(:igmp_querier_src) do
+    desc 'igmp querier src ip'
+  end
+
+  newparam(:portmcrouter) do
+    desc 'set port multicast router'
+    newvalues(0, 1)
+    munge do |value|
+      @resource.munge_integer(value)
+    end
+  end
+
   newparam(:clagd_enable,
            boolean: true,
            parent: Puppet::Parameter::Boolean) do
