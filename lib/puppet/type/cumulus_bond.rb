@@ -84,6 +84,13 @@ Puppet::Type.newtype(:cumulus_bond) do
     end
   end
 
+  newparam(:access) do
+    desc 'vlan transmitted untagged across the link (native vlan)'
+    munge do |value|
+      @resource.munge_integer(value)
+    end
+  end
+
   newparam(:portmcrouter) do
     desc 'set port multicast router'
     newvalues(0, 1)
