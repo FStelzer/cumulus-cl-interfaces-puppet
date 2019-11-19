@@ -107,6 +107,13 @@ Puppet::Type.newtype(:cumulus_interface) do
     end
   end
 
+  newparam(:access) do
+    desc 'vlan transmitted untagged across the link (native vlan)'
+    munge do |value|
+      @resource.munge_integer(value)
+    end
+  end
+
   newparam(:location) do
     desc 'location of interface files'
     defaultto '/etc/network/interfaces.d'
