@@ -24,6 +24,12 @@ Puppet::Type.newtype(:cumulus_bridge) do
     desc 'interface name'
   end
 
+  newparam(:link_down,
+           boolean: true,
+           parent: Puppet::Parameter::Boolean) do
+    desc 'Administratively shut down the interface.'
+  end
+
   newparam(:ipv4) do
     desc 'list of ipv4 addresses
     ip address must be in CIDR format and subnet mask included
